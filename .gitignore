@@ -1,0 +1,22 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editors
+.vscode/
+.idea/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Python build
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Per-agent local state (each agent writes its own .last-processed.md in its
+# own repo; not committed to commons)
+.last-processed.md

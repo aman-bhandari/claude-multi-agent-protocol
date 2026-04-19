@@ -1,5 +1,10 @@
 # claude-multi-agent-protocol
 
+[![CI](https://github.com/aman-bhandari/claude-multi-agent-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/aman-bhandari/claude-multi-agent-protocol/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Topic: Multi-agent](https://img.shields.io/badge/topic-multi--agent-blueviolet.svg)](https://github.com/topics/multi-agent)
+
 HANDOVER + SYNC inter-repo protocol for multi-agent AI systems. A file-based convention for coordinating three or more agents that each own their own repository, without a central scheduler or shared mutable state.
 
 ## What this is

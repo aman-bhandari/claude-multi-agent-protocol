@@ -19,7 +19,7 @@ The central insight: data coordination wants one-way flow (no cycles, no content
 This repo ships:
 - Format specifications for both files (`docs/handover-spec.md`, `docs/sync-spec.md`)
 - Protocol overview explaining the rationale (`docs/protocol-overview.md`)
-- Working synthetic examples (`examples/upstream-repo/HANDOVER.md`, `examples/commons/SYNC.md`)
+- Example HANDOVER + SYNC files (`examples/upstream-repo/HANDOVER.md`, `examples/commons/SYNC.md`)
 - Conformance validator (`scripts/validate.py`, zero dependencies)
 - Integrity check that smoke-tests the validator
 
@@ -119,24 +119,12 @@ Runs:
 
 CI runs the same gates on every push via `.github/workflows/ci.yml`.
 
-## Honest extract statement
-
-The protocol was originally designed for a four-repo research-lab cluster (one "human" position plus three agents: a builder, a documenter, and a publisher). The extract keeps:
-
-- The two-surface architecture (HANDOVER for one-way data, SYNC for bidirectional intent)
-- The single-writer invariants (per-repo HANDOVER, per-section SYNC)
-- The seven operating rules (one-way data, single-writer sections, strict schema, append-only decision log, durable contracts win over transient intent, git-as-serializer, timestamps mandatory)
-- The three-field per-agent schema (current-focus, recent-shift, open-question)
-- The append-only decision log + conflict registry pattern
-
-The extract drops everything lab-specific: the original role names (replaced with Producer / Processor / Publisher in the examples), the domain-specific wiki and chronicle references, and all real decision entries. The three agent sections in `examples/commons/SYNC.md` and the HANDOVER entries in `examples/upstream-repo/HANDOVER.md` are synthetic — a policy-document-processing pipeline that does not exist, with fake dates, fake batches, and fake schema-migration notes.
-
 ## Related artifacts
 
 - `claude-code-mcp-qa-automation` — end-to-end QA automation built on Claude Code + MCP patterns
-- `claude-code-agent-skills-framework` — research scaffold for AI-engineering coaching with Claude Code
+- `claude-code-agent-skills-framework` — `.claude/` framework for AI-engineering workflows
 - `llm-rag-knowledge-graph` — chronicle editorial format + wiki-as-RAG graph shape (uses this protocol for inter-repo coordination)
-- `nextjs-16-mdx-research-publisher` — static publisher for research labs
+- `nextjs-16-mdx-research-publisher` — static publisher for short research notes
 
 ## License
 
